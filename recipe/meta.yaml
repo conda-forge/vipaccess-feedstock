@@ -1,5 +1,5 @@
 {% set name = "vipaccess" %}
-{% set version = "0.10.0" %}
+{% set version = "0.10.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/dlenski/python-{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: ceee345ea955603ed31f6c34e44aff08e7447ece08c60ee40d520bac4fc0d705
+  sha256: c48b92554e9e08d1c6e4a25f7c10cf7d97346a963a7adf0e4a99eaf98b68f98f
 
 build:
   noarch: python
