@@ -1,5 +1,5 @@
 {% set name = "vipaccess" %}
-{% set version = "0.11" %}
+{% set version = "0.12" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://github.com/dlenski/python-{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 316d0ff3f8bebdce2c471dc4352db7a6fefe7286976378c2624166727671983c
+  sha256: 7ce38da64a1301558505fd771aba5a0252530c39a0ffee843a526154c2dd37f0
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
     - vipaccess = vipaccess.cli:main
 
@@ -41,10 +41,10 @@ about:
   license_file: LICENSE.txt
   summary: A free software implementation of Symantec's VIP Access application and protocol
   description: |
-      If you need to access a network which uses VIP Access for two-factor
-      authentication, but can't or don't want to use Symantec's proprietary
-      applications—which are only available for Windows, MacOS, Android, iOS —
-      then this is for you.
+    If you need to access a network which uses VIP Access for two-factor
+    authentication, but can't or don't want to use Symantec's proprietary
+    applications—which are only available for Windows, MacOS, Android, iOS —
+    then this is for you.
   doc_url: https://github.com/dlenski/python-vipaccess
   dev_url: https://github.com/dlenski/python-vipaccess
 
