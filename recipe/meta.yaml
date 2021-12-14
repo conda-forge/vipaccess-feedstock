@@ -1,5 +1,5 @@
 {% set name = "vipaccess" %}
-{% set version = "0.13" %}
+{% set version = "0.14" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://github.com/dlenski/python-{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 3d58de34bdd5e8130897975610f589057bc6ebf78e2eb17b3ba49d22e3cfd21f
+  sha256: 534e6dc160507525f98fd6cbe003abe8f6500035405605cbe0c293bec83ab2ae
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
     - vipaccess = vipaccess.__main__:main
