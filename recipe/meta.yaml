@@ -18,10 +18,10 @@ build:
 
 requirements:
   host:
-    - python
+    - python >=3.3
     - pip
   run:
-    - python
+    - python >=3.3
     - lxml ==4.2.5
     - oath >=1.4.1
     - pycryptodome ==3.6.6
