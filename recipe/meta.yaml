@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/dlenski/python-{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 534e6dc160507525f98fd6cbe003abe8f6500035405605cbe0c293bec83ab2ae
+  sha256: c7c69ba781791ab75ac4c8e7d1e57525219d5984ccfb92d0ab48a0cd7d41ed20
 
 build:
   noarch: python
