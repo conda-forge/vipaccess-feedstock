@@ -11,23 +11,25 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
     - vipaccess = vipaccess.__main__:main
 
 requirements:
   host:
-    - python >=3.3
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.3
+    - python >={{ python_min }}
     - lxml ==4.2.5
     - oath >=1.4.1
     - pycryptodome ==3.6.6
     - requests
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - vipaccess
   commands:
