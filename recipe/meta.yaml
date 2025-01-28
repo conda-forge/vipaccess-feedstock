@@ -1,4 +1,5 @@
 {% set name = "vipaccess" %}
+{% set filename = "python-vipaccess" %}
 {% set version = "0.14.2" %}
 
 package:
@@ -6,28 +7,30 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/dlenski/python-{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 77c296d20aa59b96893d80a50cd5b5f3a2db17599a19becece2dc123acc388a9
+  url: https://pypi.org/packages/source/{{ filename[0] }}/{{ filename }}/{{ filename }}-{{ version }}.tar.gz
+  sha256: 4c5497f222fa0a168bdc58fed15087cda7c5ff7d7863f8b469323cd3d424e615
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
     - vipaccess = vipaccess.__main__:main
 
 requirements:
   host:
-    - python >=3.3
+    - python {{ python_min }}
     - pip
+    - setuptools
   run:
-    - python >=3.3
-    - lxml ==4.2.5
+    - python >={{ python_min }}
     - oath >=1.4.1
-    - pycryptodome ==3.6.6
+    - pycryptodome >=3.6.6
     - requests
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - vipaccess
   commands:
